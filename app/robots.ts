@@ -10,3 +10,7 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: 'https://studioinari.com/sitemap.xml',
   }
 }
+
+
+
+

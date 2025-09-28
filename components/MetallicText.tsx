@@ -123,3 +123,7 @@ const MetallicText = ({ text, className = "" }: MetallicTextProps) => {
 }
 
 export default MetallicText
+
+
+
+

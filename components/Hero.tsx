@@ -16,19 +16,19 @@
 //       <div 
 //         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
 //         style={{
-//           backgroundImage: `url('https://images.pexels.com/photos/2438212/pexels-photo-2438212.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080')`
+//           backgroundImage: `url('')`
 //         }}
 //       ></div>
       
 //       {/* Dark overlay for better text readability */}
-//       <div className="absolute inset-0 bg-black/40"></div>
+//       <div className="absolute inset-0"></div>
       
 //       {/* Grid pattern background */}
 //       <div className="absolute inset-0 grid-pattern opacity-30"></div>
       
 //       {/* Floating elements */}
 //       <motion.div
-//         className="absolute w-0.5 h-24 bg-primary-black top-1/5 left-1/12"
+//         className="absolute w-0.5 h-24  top-1/5 left-1/12"
 //         animate={{
 //           y: [0, -20, 0],
 //           rotate: [0, 180, 360],
@@ -40,7 +40,7 @@
 //         }}
 //       />
 //       <motion.div
-//         className="absolute w-20 h-0.5 bg-primary-black top-3/5 right-1/6"
+//         className="absolute w-20 h-0. top-3/5 right-1/6"
 //         animate={{
 //           y: [0, -20, 0],
 //           rotate: [0, 180, 360],
@@ -53,7 +53,7 @@
 //         }}
 //       />
 //       <motion.div
-//         className="absolute w-10 h-10 bg-primary-black/30 top-1/3 right-1/4"
+//         className="absolute w-10 h-1 top-1/3 right-1/4"
 //         animate={{
 //           y: [0, -20, 0],
 //           rotate: [0, 180, 360],
@@ -479,6 +479,13 @@
 // }
 
 // export default Hero
+
+
+
+
+
+
+
 
 'use client'
 

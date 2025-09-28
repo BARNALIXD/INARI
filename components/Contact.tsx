@@ -64,11 +64,11 @@ const Contact = () => {
                 href="tel:+1234567890" 
                 className="block text-pure-white font-medium hover:opacity-70 transition-opacity"
               >
-                +1 (234) 567-8900
+                +91 9876543210
               </a>
               <p className="text-gray-medium">
                 123 Architecture Lane<br />
-                Design District, NY 10001
+                Bhubaneswar
               </p>
             </div>
           </motion.div>

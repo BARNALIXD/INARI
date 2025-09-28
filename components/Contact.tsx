@@ -68,7 +68,7 @@ const Contact = () => {
               </a>
               <p className="text-gray-medium">
                 123 Architecture Lane<br />
-                Bhubaneswar
+                Bhubaneswar , Odisha
               </p>
             </div>
           </motion.div>

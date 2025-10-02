@@ -219,53 +219,122 @@ const Services = () => {
     <section 
       id="services" 
       ref={ref} 
-      className="section-padding"
-      style={{ backgroundColor: '#f5f5dc' }}
+      className="section-padding bg-black relative overflow-hidden"
     >
-      <div className="container-custom">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute border border-white"
+            style={{
+              left: `${5 + i * 12}%`,
+              top: `${10 + (i % 4) * 20}%`,
+              width: `${40 + i * 8}px`,
+              height: `${40 + i * 8}px`,
+            }}
+            animate={{
+              rotate: [0, 180, 360],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 15 + i * 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 1.5,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container-custom relative z-10">
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="heading-2 mb-6" style={{ color: '#3e2723' }}>
+          <motion.h2 
+            className="heading-2 mb-6 text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          >
             Our Services
-          </h2>
-          <p className="body-large" style={{ color: '#3e2723', opacity: 0.8 }}>
+          </motion.h2>
+          <motion.p 
+            className="body-large text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+          >
             Comprehensive architectural solutions tailored to your needs
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="p-8 transition-all duration-300 hover:-translate-y-2 rounded-lg"
+              className="p-8 transition-all duration-300 hover:-translate-y-2 rounded-lg group relative overflow-hidden"
               style={{
-                border: '1px solid rgba(62, 39, 35, 0.2)',
-                backgroundColor: 'rgba(62, 39, 35, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(62, 39, 35, 0.2)'
-                e.currentTarget.style.borderColor = 'rgba(62, 39, 35, 0.4)'
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(62, 39, 35, 0.15)'
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)'
+                e.currentTarget.style.boxShadow = '0 20px 40px rgba(255, 255, 255, 0.1)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(62, 39, 35, 0.1)'
-                e.currentTarget.style.borderColor = 'rgba(62, 39, 35, 0.2)'
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
                 e.currentTarget.style.boxShadow = 'none'
               }}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
             >
-              <h3 className="heading-3 mb-4" style={{ color: '#3e2723' }}>
-                {service.title}
-              </h3>
-              <p className="body-regular" style={{ color: '#3e2723', opacity: 0.85 }}>
-                {service.description}
-              </p>
+              {/* Animated background pattern */}
+              <motion.div
+                className="absolute inset-0 opacity-5"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-full h-full border border-white/20" />
+              </motion.div>
+
+              <div className="relative z-10">
+                <motion.h3 
+                  className="heading-3 mb-4 text-white"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 + 0.3 }}
+                >
+                  {service.title}
+                </motion.h3>
+                <motion.p 
+                  className="body-regular text-gray-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 + 0.5 }}
+                >
+                  {service.description}
+                </motion.p>
+              </div>
+
+              {/* Animated corner elements */}
+              <motion.div
+                className="absolute top-4 right-4 w-2 h-2 bg-white/30"
+                animate={{ scale: [1, 1.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+              />
+              <motion.div
+                className="absolute bottom-4 left-4 w-1 h-1 bg-white/50"
+                animate={{ scale: [1, 2, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
+              />
             </motion.div>
           ))}
         </div>
@@ -275,3 +344,8 @@ const Services = () => {
 }
 
 export default Services
+
+
+
+
+

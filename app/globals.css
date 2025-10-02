@@ -124,6 +124,25 @@ body {
   overflow-x: hidden;
 }
 
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  /* Better touch targets for mobile */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  
+  /* Mobile menu button */
+  .mobile-menu-button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

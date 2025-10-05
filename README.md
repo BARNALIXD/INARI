@@ -123,10 +123,7 @@ Replace placeholder images with your own:
 
 This project is created for Studio Inari. All rights reserved.
 
-## Support
 
-For questions or support, contact hello@studioinari.com
-"# INARI" 
 
 
 

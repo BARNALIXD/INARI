@@ -3,8 +3,7 @@
 A modern, SEO-optimized Next.js website for Studio Inari, a contemporary architecture firm. Built with TypeScript, Tailwind CSS, and Framer Motion for smooth animations.
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ec28e18-df3c-445c-b889-387e7b616cb9" />
 
-
-link : inaristudio.netlify.app
+[https://inaristudio.netlify.app/]
 
 ## Features
 
